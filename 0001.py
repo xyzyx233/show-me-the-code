@@ -20,8 +20,10 @@ class getacitivecode:
 
     def storelist(self):
         f= open('activitecode.txt','a+')
+        # f.writelines(self.codelist)
         for l in self.codelist:
             f.write(l)
+            f.write('\n')
     def showmelist(self):
         for l in self.codelist:
             print l

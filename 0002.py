@@ -3,7 +3,7 @@
 import MySQLdb
 
 class connectdb:
-
+    db=''
     def __init__(self):
         self.url='localhost'
         self.username='root'
@@ -24,10 +24,9 @@ class connectdb:
         cursor = self.db.cursor()
         sql="insert into activitycode(code) values("
         for l in self.codelist:
-            sql=sql+'\''+l+'\''+')'
-            print sql
+            sqls=sql+'\''+l+'\''+')'
             try:
-                cursor.execute(sql)
+                cursor.execute(sqls)
                 self.db.commit()
             except:
                 self.db.rollback()
